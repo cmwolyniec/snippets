@@ -18,7 +18,7 @@ addSubscriberToMailChimpList($member);
 			$mergeFields = array('FNAME' => $member->FirstName, 'LNAME'=> $member->Surname);
 			$data = array('email_address' => $member->Email, 'status' => 'subscribed', 'merge_fields' => $mergeFields);
 			$body = Unirest\Request\Body::json($data);
-			// post response
+			// post request, receive response
 			$response = Unirest\Request::post($api, $headers, $body);
 				
 			} catch (Exception $e) {
